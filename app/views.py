@@ -163,15 +163,20 @@ def Fantasy(request):
  #return render(request, 'app/customerregistration.html')
 
 class CustomerRegistrationView(View):
-    def get(self,request):
+    def get(self, request):
         form = CustomerRegistrationForm()
-        return render(request, 'app/customerregistration.html', {'form':form})
+        return render(request, 'app/customerregistration.html', {'form': form})
+    
     def post(self, request):
         form = CustomerRegistrationForm(request.POST)
         if form.is_valid():
+            form.save()  # Save the customer details
             messages.success(request, 'Congratulations!! Registered Successfully.')
-            form.save()
-        return render(request, 'app/customerregistration.html', {'form':form})
+            # Redirect to the same page to clear the form and prevent resubmission
+            return redirect('customerregistration')
+        
+        # In case of invalid form, re-render the form with error messages
+        return render(request, 'app/customerregistration.html', {'form': form})
 
 @login_required
 def checkout(request):
@@ -210,7 +215,7 @@ def payment_done(request):
 class ProfileView(View):
     def get(self, request):
         form = CustomerProfileForm()
-        return render(request, 'app/profile.html', {'form': form, 'active' : 'btn-primary'})
+        return render(request, 'app/profile.html', {'form': form, 'active': 'btn-primary'})
 
     def post(self, request):
         form = CustomerProfileForm(request.POST)
@@ -221,7 +226,13 @@ class ProfileView(View):
             city = form.cleaned_data['city']
             state = form.cleaned_data['state']
             zipcode = form.cleaned_data['zipcode']
-            reg = Customer(user=usr,name=name, locality=locality, city=city, state=state, zipcode=zipcode)
+            # Save the profile details
+            reg = Customer(user=usr, name=name, locality=locality, city=city, state=state, zipcode=zipcode)
             reg.save()
-            messages.success(request, 'Congratulations !! Profile updated successfully !!')
-        return render(request, 'app/profile.html', {'form':form, 'active' : 'btn-primary'})
+            # Add a success message
+            messages.success(request, 'Congratulations! Profile updated successfully!')
+            # Redirect to the same page to clear the form and avoid resubmission
+            return redirect('profile')
+        
+        # In case of invalid form, re-render the page with form errors
+        return render(request, 'app/profile.html', {'form': form, 'active': 'btn-primary'})
