@@ -16,11 +16,11 @@ from django.utils.decorators import method_decorator
 
 class ProductView(View):
     def get(self, request):
-        horror = Product.objects.filter(category='H')
-        fantasy = Product.objects.filter(category='F')
+        hair = Product.objects.filter(category='H')
+        floral = Product.objects.filter(category='F')
         
         return render(request, 'app/home.html', 
-        {'fantasy':fantasy, 'horror':horror})
+        {'floral':floral, 'hair':hair})
 
 # def product_detail(request):
  #return render(request, 'app/productdetail.html')
@@ -146,15 +146,15 @@ def orders(request):
     return render(request, 'app/orders.html', {'order_placed':op})
 
 
-def Horror(request):
+def Hair(request):
     
-        horror = Product.objects.filter(category='H')
-        return render(request, 'app/horror.html', {'horror':horror})
+        hair = Product.objects.filter(category='H')
+        return render(request, 'app/horror.html', {'hair':hair})
 
-def Fantasy(request):
+def Floral(request):
     
-        fantasy= Product.objects.filter(category='F')
-        return render(request, 'app/fantasy.html', {'fantasy':fantasy})
+        floral= Product.objects.filter(category='F')
+        return render(request, 'app/fantasy.html', {'floral':floral})
 
 # def login(request):
 # return render(request, 'app/login.html')

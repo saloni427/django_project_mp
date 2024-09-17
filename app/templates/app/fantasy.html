@@ -1,12 +1,12 @@
 {% extends 'app/base.html' %}
 {% load static %}
-{% block title %}Fantasy Books{% endblock title %}
+{% block title %}Floral Accessories{% endblock title %}
 {% block main-content %}
 <div class="container my-5">
  
   <div class="col-sm-8">
         <div class="row">
-            {% for product in fantasy %}
+            {% for product in floral %}
             <div class="col-sm-4 text center mb-4">
                 <a href="{% url 'product-detail' product.id %}" class="btn">
             <div class="item">

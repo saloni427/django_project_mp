@@ -25,8 +25,8 @@ urlpatterns = [
     path('paymentdone/', views.payment_done, name='paymentdone'),
     #path('changepassword/', views.change_password, name='changepassword'),
     path('password-reset/', auth_views.PasswordResetView.as_view(template_name='app/password_reset.html', form_class=MyPasswordResetForm), name='password_reset'),
-    path('horror/', views.Horror, name='horror'),
-    path('fantasy/', views.Fantasy, name='fantasy'),
+    path('hair/', views.Hair, name='hair'),
+    path('floral/', views.Floral, name='floral'),
     
     #path('mobile/<slug:data>', views.mobile, name='mobiledata'),
     #path('login/', views.login, name='login'),

@@ -54,8 +54,8 @@ class Customer(models.Model):
         return str(self.id)
 
 CATEGORY_CHOICES = (
-    ('H', 'Horror'),
-    ('F', 'Fantasy')
+    ('H', 'Hair'),
+    ('F', 'Floral')
 
     )
 

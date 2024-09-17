@@ -19,12 +19,12 @@
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
 
 
-    <title>ShoppingX | {% block title %} {% endblock title %} </title>
+    <title>Floral Fashion | {% block title %} {% endblock title %} </title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
      <div class="container">
-       <a class="navbar-brand" href="/">BOOKWORM</a>
+       <a class="navbar-brand" href="/">Floral Fashion</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
@@ -37,11 +37,11 @@
            
            <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Genre
+               Type
              </a>
              <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
-               <li><a class="dropdown-item" href="{% url 'horror' %}">Horror</a></li>
-               <li><a class="dropdown-item" href="{% url 'fantasy' %}">Fantasy</a></li>
+               <li><a class="dropdown-item" href="{% url 'hair' %}">Hair Accessories</a></li>
+               <li><a class="dropdown-item" href="{% url 'floral' %}">Floral Accessories</a></li>
              </ul>
            </li>
          </ul>
