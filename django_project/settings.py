@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from msilib.schema import Media
 from pathlib import Path
 
@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-epjfqr*+nvr%#v#v&@wo0ow^l!8zb!@!s^$8$p35(8b(7vedgc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['saloni427.pythonanywhere.com']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost']
+
 
 
 # Application definition
@@ -119,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_REDIRECT_URL = '/profile/'
