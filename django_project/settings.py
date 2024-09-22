@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-epjfqr*+nvr%#v#v&@wo0ow^l!8zb!@!s^$8$p35(8b(7vedgc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['floral-fashion.onrender.com']
 
 
 
