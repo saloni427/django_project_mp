@@ -1,9 +1,9 @@
-from numpy import prod
+
 from unicodedata import category
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.views import View
-from numpy import product
+from numpy import prod
 from .models import Customer,Product,Cart,OrderPlaced
 from .forms import CustomerRegistrationForm, CustomerProfileForm
 from django.contrib import messages
