@@ -1,3 +1,4 @@
+from numpy import prod
 from unicodedata import category
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
@@ -10,6 +11,7 @@ from django.db.models import Q
 from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+
 
 # def home(request):
 # return render(request, 'app/home.html')
